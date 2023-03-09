@@ -56,7 +56,7 @@ async def op(_, m :Message):
                 [
                     [
                         InlineKeyboardButton("Channel", url="https://t.me/WM_TEAMS"),
-                        InlineKeyboardButton("Group", url="https://t.me/Movies_Grop")
+                        InlineKeyboardButton("Group", url="https://t.me/MOVIE_GROP")
                     ],[
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
                     ]
@@ -98,7 +98,7 @@ async def chk(_, cb : CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("Channel", url="https://t.me/WM_TEAMS"),
-                        InlineKeyboardButton("Group", url="https://t.me/MOVIES_GROP")
+                        InlineKeyboardButton("Group", url="https://t.me/MOVIE_GROP")
                     ],[
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
                     ]
