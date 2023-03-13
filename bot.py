@@ -38,7 +38,7 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         img = random.choice(gif)
-        await app.send_video(kk.id,img, "**Hello {}!\nWelcome To {}\n\n__JOIN OUR MAIN CHANNEL:✅️ https://t.me/+Ip2tJVuUYfwzNWQ9 ✅️**".format(m.from_user.mention, m.chat.title))
+        await app.send_video(kk.id,img, "**Hello {}!\nWelcome To {}\n\n__𝙉𝙀𝙒 𝙈𝙊𝙑𝙄𝙀𝙕 :- https://t.me/+Ip2tJVuUYfwzNWQ9 ✅️**".format(m.from_user.mention, m.chat.title))
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
         print("user isn't start bot(means group)")
@@ -55,10 +55,8 @@ async def op(_, m :Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Channel", url="https://t.me/WM_TEAMS"),
-                        InlineKeyboardButton("Group", url="https://t.me/MOVIE_GROP")
-                    ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
+                        InlineKeyboardButton("𝗖𝗛𝗔𝗡𝗡𝗘𝗟", url="https://t.me/WM_TEAMS"),
+                        InlineKeyboardButton("𝗚𝗥𝗢𝗨𝗣", url="https://t.me/MOVIE_GROP")
                     ]
                 ]
             )
@@ -69,7 +67,7 @@ async def op(_, m :Message):
             keyboar = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/SDAutoApproveBot?start=start")
+                        InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/Auto_accebot?start=start")
                     ]
                 ]
             )
@@ -81,7 +79,7 @@ async def op(_, m :Message):
         key = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🍀 Check Again 🍀", "chk")
+                    InlineKeyboardButton("🍀 𝙏𝙍𝙔 𝘼𝙂𝘼𝙄𝙉 🍀", "chk")
                 ]
             ]
         )
@@ -97,10 +95,8 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Channel", url="https://t.me/WM_TEAMS"),
-                        InlineKeyboardButton("Group", url="https://t.me/MOVIE_GROP")
-                    ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
+                        InlineKeyboardButton("𝗖𝗛𝗔𝗡𝗡𝗘𝗟", url="https://t.me/WM_TEAMS"),
+                        InlineKeyboardButton("𝗚𝗥𝗢𝗨𝗣", url="https://t.me/MOVIE_GROP")
                     ]
                 ]
             )
