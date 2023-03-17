@@ -63,7 +63,7 @@ async def op(_, m :Message):
             await m.reply_sticker("CAACAgUAAxkBAAEBDRxj902Hnsn-4penhRIi7MAHFlvdMwACVgoAAs7CuFQe2rEoOUnCVh4E", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : https://t.me/+Ip2tJVuUYfwzNWQ9 __**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
-            keyboard = InlineKeyboardMarkup(
+            keyboar = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/Auto_accebot?start=start")
