@@ -14,16 +14,6 @@ app = Client(
 )
 
 gif = [
-    'https://telegra.ph/file/a5a2bb456bf3eecdbbb99.mp4',
-    'https://telegra.ph/file/03c6e49bea9ce6c908b87.mp4',
-    'https://telegra.ph/file/9ebf412f09cd7d2ceaaef.mp4',
-    'https://telegra.ph/file/293cc10710e57530404f8.mp4',
-    'https://telegra.ph/file/506898de518534ff68ba0.mp4',
-    'https://telegra.ph/file/dae0156e5f48573f016da.mp4',
-    'https://telegra.ph/file/3e2871e714f435d173b9e.mp4',
-    'https://telegra.ph/file/714982b9fedfa3b4d8d2b.mp4',
-    'https://telegra.ph/file/876edfcec678b64eac480.mp4',
-    'https://telegra.ph/file/6b1ab5aec5fa81cf40005.mp4',
     'https://telegra.ph/file/b4834b434888de522fa49.mp4'
 ]
 
@@ -47,61 +37,7 @@ async def approve(_, m : Message):
  
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Start ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-@app.on_message(filters.command("start"))
-async def op(_, m :Message):
-    try:
-        await app.get_chat_member(cfg.CHID, m.from_user.id) 
-        if m.chat.type == enums.ChatType.PRIVATE:
-            keyboard = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("➕️ Add Me In Your Chats ➕️", url="https://t.me/AUTO_ACCeBOT?startgroup")
-                    ]
-                ]
-            )
-            add_user(m.from_user.id)
-            await m.reply_photo("https://graph.org/file/811f42f960001051d9832.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__POWDERED BY: https://t.me/+BvBB0TPosmg3NTc1 __**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)    
-        elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
-            keyboar = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/Auto_accebot?start=start")
-                    ]
-                ]
-            )
-            add_group(m.chat.id)
-            await m.reply_text("**🦊 Hello {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
-        print(m.from_user.first_name +" Is started Your Bot!")
 
-    except UserNotParticipant:
-        key = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🍀 𝙏𝙍𝙔 𝘼𝙂𝘼𝙄𝙉 🍀", "chk")
-                ]
-            ]
-        )
-        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
-
-#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-@app.on_callback_query(filters.regex("chk"))
-async def chk(_, cb : CallbackQuery):
-    try:
-        await app.get_chat_member(cfg.CHID, cb.from_user.id)
-        if cb.message.chat.type == enums.ChatType.PRIVATE:
-            keyboard = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("➕️ Add Me In Your Chats ➕️", url="https://t.me/AUTO_ACCeBOT?startgroup")
-                    ]
-                ]
-            )
-            add_user(cb.from_user.id)
-            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @WM_TeamS__**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
-        print(cb.from_user.first_name +" Is started Your Bot!")
-    except UserNotParticipant:
-        await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ info ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
