@@ -7,6 +7,6 @@ class Config:
     FSUB = getenv("FSUB", "wmteams")
     CHID = int(getenv("CHID", "-1001651905628"))
     SUDO = list(map(int, getenv("SUDO").split(1258310642)))
-    MONGO_URI = getenv("MONGO_URI", "")
+    MONGO_URI = getenv("MONGO_URI", "mongodb+srv://v:v@cluster0.zznxusa.mongodb.net/?retryWrites=true&w=majority")
     
 cfg = Config()
